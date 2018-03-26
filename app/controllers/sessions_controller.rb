@@ -11,5 +11,12 @@ class SessionsController < ApplicationController
     session[:username] = user_json["login"]
 
     redirect_to '/'
+
+    # response = GithubService.new
+    # session[:token] = response.authenticate!(ENV['GITHUB_CLIENT'], ENV['GITHUB_SECRET'], params[:code])
+    # redirect_to root_path
+
+    # user = GithubService.new
+    # session[:username] = user.get_username
   end
 end
